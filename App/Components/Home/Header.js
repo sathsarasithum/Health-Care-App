@@ -23,11 +23,12 @@ export default function Header() {
         <Image source={userImage} style={styles.user1} />
 
         <View>
-          <Text>Hello, 👋</Text>
+          <Text style={{fontFamily:'appfont'}}>Hello, 👋</Text>
           <Text
             style={{
               fontSize: 18,
               fontWeight: "bold",
+              fontFamily:'appfont-bold'
             }}
           >
             {user1}

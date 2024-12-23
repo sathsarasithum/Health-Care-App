@@ -8,7 +8,7 @@ export default function Home() {
     <View style={{padding:20, marginTop:20}}>
       <Header />
 
-      <SearchBar />
+      <SearchBar setSearchText={(value) => console.log(value)}/>
     </View>
   )
 }

@@ -4,7 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import Colors from '../../../assets/Shared/Colors';
 
 
-export default function SearchBar() {
+export default function SearchBar({setSearchText}) {
 
     const [searchInput,setSearchInput] = useState();
 
@@ -26,7 +26,7 @@ export default function SearchBar() {
         <Ionicons name="search" size={24} color="black" />
         <TextInput placeholder='Search'
             onChangeText={(value)=> setSearchInput(value)}
-            onSubmitEditing={()=>console.log(searchInput)}
+            onSubmitEditing={()=>setSearchText(searchInput)}
             style={{width:'100%'}}
         />
       </View>
