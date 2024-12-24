@@ -9,7 +9,7 @@ export default function Header() {
   //     return null;
   // }
 
-  const user1 = "sathsara";
+  const user1 = "Sathsara";
   return (
     <View style={{display:'flex', flexDirection:'row',alignItems:'center',justifyContent:'space-between',padding:10}}>
       <View

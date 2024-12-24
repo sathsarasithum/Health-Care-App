@@ -5,6 +5,7 @@ import Colors from "./assets/Shared/Colors";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "./App/Navigations/TabNavigation";
 import { useFonts } from 'expo-font';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function App() {
 
@@ -20,11 +21,11 @@ export default function App() {
     return null;
   }
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
         <TabNavigation />
       </NavigationContainer>
-    </SafeAreaView>
+    </GestureHandlerRootView>
   );
 }
 
