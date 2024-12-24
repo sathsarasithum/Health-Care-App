@@ -6,6 +6,7 @@ import cardiologist from "../../../assets/Images/Cardiologist.png";
 import neurologist from "../../../assets/Images/Neurologist.png";
 import orthopedic from "../../../assets/Images/Orthopedic.png";
 import otology from "../../../assets/Images/Otology.png";
+import SubHeading from "./SubHeading";
 
 export default function Categories() {
 
@@ -40,22 +41,7 @@ export default function Categories() {
 
   return (
     <View style={{ marginTop: 10 }}>
-      <View style={{
-        display:'flex',
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center',
-        paddingLeft:10
-      }}>
-        <Text style={{
-            fontSize:20,
-            fontFamily:'appfont-semi'
-        }}>Doctor Speciality</Text>
-        <Text style={{
-            fontFamily:'appfont',
-            color:Colors.PRIMARY
-        }}>See All</Text>
-      </View>
+      <SubHeading subHeading={'Doctor Specialist'}/>
 
       <FlatList 
               data={categoryList}
