@@ -1,4 +1,4 @@
-import { View, Text, Image, Dimensions, FlatList } from "react-native";
+import { View, Text, Image, Dimensions, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
 import Colors from "../../../assets/Shared/Colors";
 import dentist from "../../../assets/Images/Dentist.png";
@@ -7,6 +7,7 @@ import neurologist from "../../../assets/Images/Neurologist.png";
 import orthopedic from "../../../assets/Images/Orthopedic.png";
 import otology from "../../../assets/Images/Otology.png";
 import SubHeading from "./SubHeading";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Categories() {
 
@@ -39,6 +40,8 @@ export default function Categories() {
 
 ]
 
+  const navigation = useNavigation();
+
   return (
     <View style={{ marginTop: 10 }}>
       <SubHeading subHeading={'Doctor Specialist'}/>
@@ -54,7 +57,12 @@ export default function Categories() {
                 justifyContent:'space-between'
               }}
               renderItem={({item, index})=>index<4&&(
-                  <View style={{alignItems:'center',marginBottom:10}}>
+                  <TouchableOpacity 
+                  onPress={()=>navigation.navigate('hospital-doctor-list-screen',
+                  {
+                    categoryName:item.name
+                  })}
+                  style={{alignItems:'center',marginBottom:10}}>
                     <View style={{
                       backgroundColor:Colors.SECONDARY_COLOR,
                       padding:15,borderRadius:99
@@ -72,7 +80,7 @@ export default function Categories() {
                         />
                     </View>
                     <Text>{item.name}</Text>
-                  </View>
+                  </TouchableOpacity>
               )}
             />
     </View>
