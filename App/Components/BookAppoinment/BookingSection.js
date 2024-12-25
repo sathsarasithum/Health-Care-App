@@ -4,7 +4,7 @@ import React from 'react'
 const BookingSection = () => {
   return (
     <View>
-      <Text>BookingSection</Text>
+      <Text>Book Appoinment</Text>
     </View>
   )
 }
