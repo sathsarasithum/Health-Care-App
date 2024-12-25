@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   Dimensions,
+  Image,
 } from "react-native";
 import React, { useState } from "react";
 import PageHeader from "../Components/Shared/PageHeader";
@@ -13,6 +14,8 @@ import Feather from "@expo/vector-icons/Feather";
 import Icon from "react-native-vector-icons/Feather";
 import { Formik } from 'formik';  
 import * as Yup from 'yup'; 
+import google1 from '../../assets/Images/google/google1.png'
+import google2 from '../../assets/Images/google/google2.png'
 
 const LoginForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -98,7 +101,7 @@ const LoginForm = () => {
           </TouchableOpacity>
         </View>
 
-        
+
         <View style={{alignItems:'center', marginTop:60, paddingLeft:8}}>
             <Text style={{color:Colors.GREY, fontWeight:'600'}}>Or</Text>
         </View>
@@ -109,17 +112,22 @@ const LoginForm = () => {
               borderWidth: 1,
               backgroundColor: Colors.LIGHT_GRAY,
               borderRadius: 99,
+              paddingLeft:40,
               padding: 16,
               borderRadius: 90,
               alignItems: "center",
               marginTop: 20,
               width: Dimensions.get("screen").width * 0.7,
               borderColor: Colors.grey,
+              display:'flex',
+              flexDirection:'row',
+              gap:10
             }}
             //   onPress={() => {
             //     navigation.navigate('login-form');
             //   }}
           >
+            <Image source={google2} style={{width:20, height:20}}/>
             <Text style={{fontSize:18, fontWeight:'600', color:Colors.SECONDARY}}>Continue With Google</Text>
           </TouchableOpacity>
         </View>
