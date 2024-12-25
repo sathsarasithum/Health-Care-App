@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import Home from '../Screens/Home';
 import HospitalDoctorListScreen from '../Screens/HospitalDoctorListScreen';
 import HospitalDetails from '../Screens/HospitalDetails';
+import BookApoinment from '../Screens/BookApoinment';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,7 @@ const HomeNavigation = () => {
     <Stack.Screen name='hospital-doctor-list-screen' 
     component={HospitalDoctorListScreen} />
     <Stack.Screen name='hospital-detail' component={HospitalDetails}/>
+    <Stack.Screen name='book-appoinment' component={BookApoinment} />
    </Stack.Navigator>
   )
 }

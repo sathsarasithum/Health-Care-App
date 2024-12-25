@@ -76,7 +76,7 @@ const hospitalList = [
     name: 'National Hospital of Sri Lanka',
     address: 'No. 317, Deans Road, Colombo 10, Sri Lanka.',
     imageUrl: hospital1,
-    description: 'The largest and most comprehensive hospital in Sri Lanka, providing a wide range of medical services including emergency care, general treatments, and specialized clinics.',
+    description: 'As the largest and oldest hospital in Sri Lanka, the National Hospital of Sri Lanka (NHSL) is a government-run institution renowned for its extensive range of healthcare services. Established in the 19th century, it serves as a primary referral center for the entire country. NHSL houses over 3,000 beds and offers services including general medicine, emergency care, specialized surgical units, and advanced neurology and cardiology treatments.The hospital is also a key teaching institution, training medical professionals from across Sri Lanka.',
     categories: [
       { id: 1, name: 'General' },
       { id: 2, name: 'Cardiology' },
@@ -88,7 +88,7 @@ const hospitalList = [
     name: 'Lanka Hospitals (Pvt) Ltd',
     address: 'No. 578, Elvitigala Mawatha, Colombo 5, Sri Lanka.',
     imageUrl: hospital2,
-    description: 'A leading private hospital known for its state-of-the-art facilities, exceptional pediatric care, and a variety of specialized medical services.',
+    description: 'Renowned as one of the leading private hospitals in Sri Lanka, Lanka Hospitals offers world-class services in a comfortable and efficient environment. It is particularly celebrated for its pediatric care, making it a trusted choice for families. With state-of-the-art facilities and a dedicated team of healthcare professionals, Lanka Hospitals excels in areas such as dentistry, orthopedics, and specialized pediatrics, ensuring top-notch care tailored to patients’ needs.',
     categories: [
       { id: 1, name: 'Dentist' },
       { id: 2, name: 'Pediatrics' },
@@ -100,7 +100,7 @@ const hospitalList = [
     name: 'Asiri Hospital Holdings PLC',
     address: 'No. 21, Kirimandala Mawatha, Colombo 5, Sri Lanka.',
     imageUrl: hospital3,
-    description: 'One of the most advanced hospitals in Colombo, offering cutting-edge treatments in cardiology, oncology, and radiology, with highly skilled medical professionals.',
+    description: 'Known for its emphasis on patient comfort and care, Durdans Hospital offers a serene environment for treatment. Its specialized departments in neurology, dermatology, and psychiatry attract patients seeking holistic and empathetic medical services. The hospital combines modern facilities with a patient-first approach, ensuring a comfortable and healing experience for all visitors.',
     categories: [
       { id: 1, name: 'Cardiology' },
       { id: 2, name: 'Oncology' },
@@ -112,7 +112,7 @@ const hospitalList = [
     name: 'Durdans Hospital',
     address: 'No. 3, Alfred Place, Colombo 3, Sri Lanka.',
     imageUrl: hospital4,
-    description: 'Renowned for its patient-centered care, Durdans Hospital specializes in neurology, dermatology, and psychiatry, providing a comfortable environment for treatment.',
+    description: 'Kings Hospital stands as a symbol of modern medical excellence. With a strong focus on cardiology, surgical care, and ENT (ear, nose, throat) treatments, it provides high-quality healthcare services to its patients. The hospital is equipped with world-class infrastructure and an experienced medical team, ensuring optimal outcomes for a wide range of medical needs. Patients appreciate its dedication to providing personalized and compassionate care.',
     categories: [
       { id: 1, name: 'Neurology' },
       { id: 2, name: 'Dermatology' },
@@ -146,7 +146,7 @@ const hospitalList = [
   const param = useRoute().params;
   const [activeTab, setActiveTab] = useState('Hospital');
   return (
-    <View style={{padding:30}}>
+    <View style={{padding:19}}>
        
       <PageHeader title={param?.categoryName}/>
       <HospitalDoctorTab activeTab={(value)=>setActiveTab(value)}/>

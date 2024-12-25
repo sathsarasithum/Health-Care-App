@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { useRoute } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
 import PageHeader from '../Components/Shared/PageHeader';
 import HospitalInfo from '../Components/HospitalDetail/HospitalInfo';
 import Colors from '../../assets/Shared/Colors';
@@ -8,6 +8,7 @@ import Colors from '../../assets/Shared/Colors';
 const HospitalDetails = () => {
     const [hospital, setHospital] = useState([]);
     const param = useRoute().params;
+    const navigation = useNavigation();
 
     useEffect(()=>{
         setHospital(param.hospital)
@@ -34,9 +35,11 @@ const HospitalDetails = () => {
             }}>
             <HospitalInfo hospital={hospital}/>
         </View>
-        <View style={{padding:25,alignItems:'center',marginTop:50}}>
+        <View style={{alignItems:'center'}}>
             <TouchableOpacity 
-                onPress={() => console.log("Clicked")}
+                onPress={() => navigation.navigate('book-appoinment',{
+                    hospital:hospital
+                })}
                 style={{padding:16,
                 backgroundColor:Colors.PRIMARY,
                 borderRadius:99,

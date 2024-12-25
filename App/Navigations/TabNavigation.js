@@ -19,7 +19,13 @@ export default function TabNavigation() {
             headerShown:false,
             tabBarStyle: { position: 'absolute' },
             tabBarLabelStyle: { fontSize: 14 },}}>
-        <Tab.Screen name='Home' component={HomeNavigation} />
+        <Tab.Screen name='Home' component={HomeNavigation} 
+          options={{
+            tabBarIcon:({color,size}) => (
+              <FontAwesome name="home" size={size} color={color} />
+            )
+          }}
+        />
         <Tab.Screen name='Login' component={Login} 
           options={{
             tabBarIcon:({color,size}) => (

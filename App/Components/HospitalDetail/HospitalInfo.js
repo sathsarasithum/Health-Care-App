@@ -4,6 +4,7 @@ import Colors from '../../../assets/Shared/Colors'
 import Ionicons from "@expo/vector-icons/Ionicons";
 import ActionButton from './ActionButton';
 import SubHeading from '../Home/SubHeading';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const HospitalInfo = ({hospital}) => {
   return hospital&&(
@@ -67,7 +68,12 @@ const HospitalInfo = ({hospital}) => {
         </View>
 
         <SubHeading subHeading={'About'}/>
-        <Text>{hospital.description}</Text>
+        <ScrollView 
+            showsVerticalScrollIndicator={false}
+            style={{maxHeight: 140,}}>
+            <Text style={{lineHeight: 20}}>{hospital.description}</Text>
+        </ScrollView>
+        
             
     </View>
     
