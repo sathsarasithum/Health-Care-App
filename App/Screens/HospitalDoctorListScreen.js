@@ -82,29 +82,24 @@ const hospitalList = [
   }, []);
 
   const param = useRoute().params;
+  const [activeTab, setActiveTab] = useState('Hospital');
   return (
     <View style={{padding:30}}>
        
       <PageHeader title={param?.categoryName}/>
-      <HospitalDoctorTab />
+      <HospitalDoctorTab activeTab={(value)=>setActiveTab(value)}/>
 
-      {/* {hospitalList.length === 0 ? (
+      {hospitalList.length === 0 ? (
         <ActivityIndicator size={'large'} color={Colors.PRIMARY} 
           style={{marginTop:'50%'}} 
         />
-      ) : (
+      ) :
+      activeTab=='Hospital'? 
         <HospitalListBig hospitalList={hospitalList} />
-      )} */}
-      {isLoading ? (
-        <ActivityIndicator
-          size={'large'}
-          color={Colors.PRIMARY}
-          style={{ marginTop: '50%' }}
-        />
-      ) : (
-        <HospitalListBig hospitalList={hospitalList} />
-      )}
-      
+        :
+        
+        <Text>Doctors List</Text> //add doctor list component
+      }
       
     </View>
   )

@@ -6,5 +6,6 @@ export default{
     SECONDARY_COLOR:'#dbeafe',
     GREY:'#a6a4a4',
     PRIMARY_GREEN:'#0e5e04',
-    ORANGE:'#e8300c'
+    ORANGE:'#e8300c',
+    BLUE:'#1b68e3'
 }
