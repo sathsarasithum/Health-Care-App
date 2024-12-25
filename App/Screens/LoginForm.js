@@ -11,6 +11,8 @@ import PageHeader from "../Components/Shared/PageHeader";
 import Colors from "../../assets/Shared/Colors";
 import Feather from "@expo/vector-icons/Feather";
 import Icon from "react-native-vector-icons/Feather";
+import { Formik } from 'formik';  
+import * as Yup from 'yup'; 
 
 const LoginForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -95,6 +97,8 @@ const LoginForm = () => {
             <Text style={{fontSize:18, fontWeight:'600', color:Colors.white}}>Login</Text>
           </TouchableOpacity>
         </View>
+
+        
         <View style={{alignItems:'center', marginTop:60, paddingLeft:8}}>
             <Text style={{color:Colors.GREY, fontWeight:'600'}}>Or</Text>
         </View>

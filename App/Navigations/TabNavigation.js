@@ -9,6 +9,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Entypo from '@expo/vector-icons/Entypo';
 import HomeNavigation from './HomeNavigation'
 import Explores from '../Screens/Explores'
+import RegisterForm from '../Screens/RegisterForm'
 
 const Tab = createBottomTabNavigator()
 
@@ -48,7 +49,7 @@ export default function TabNavigation() {
             )
           }}
         />
-        <Tab.Screen name='Profile' component={Profile} 
+        <Tab.Screen name='Profile' component={RegisterForm} 
           options={{
             tabBarIcon:({color,size}) => (
               <FontAwesome name="user-circle" size={size} color='#1ABC9C' />
