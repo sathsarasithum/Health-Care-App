@@ -3,6 +3,7 @@ import React from 'react'
 import Colors from '../../../assets/Shared/Colors'
 import Ionicons from "@expo/vector-icons/Ionicons";
 import ActionButton from './ActionButton';
+import SubHeading from '../Home/SubHeading';
 
 const HospitalInfo = ({hospital}) => {
   return hospital&&(
@@ -64,6 +65,9 @@ const HospitalInfo = ({hospital}) => {
             marginTop:10
             }}>
         </View>
+
+        <SubHeading subHeading={'About'}/>
+        <Text>{hospital.description}</Text>
             
     </View>
     

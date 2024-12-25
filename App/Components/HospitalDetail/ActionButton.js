@@ -18,7 +18,7 @@ const ActionButton = () => {
         {
             id: 3,
             name: 'Phone',
-            icon: 'phone-portrait-outline'
+            icon: 'call'
         },
         {
             id: 4,
