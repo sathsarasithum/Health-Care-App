@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import Colors from "../../../assets/Shared/Colors";
 
-export default function SubHeading({subHeading}) {
+export default function SubHeading({subHeading,seeAll=true}) {
   return (
     <View
       style={{
@@ -10,7 +10,8 @@ export default function SubHeading({subHeading}) {
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        marginBottom:10
+        marginBottom:10,
+        marginTop:10
       }}
     >
       <Text
@@ -21,14 +22,15 @@ export default function SubHeading({subHeading}) {
       >
         {subHeading}
       </Text>
-      <Text
-        style={{
-          fontFamily: "appfont",
-          color: Colors.PRIMARY,
-        }}
-      >
-        See All
-      </Text>
+      {seeAll ? <Text
+          style={{
+            fontFamily: "appfont",
+            color: Colors.PRIMARY,
+          }}
+        >
+          See All
+        </Text> : null
+      }
     </View>
   );
 }
