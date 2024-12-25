@@ -52,10 +52,10 @@ const ActionButton = () => {
                     alignItems:'center',
                     width:51
                     }}>
-                    <Ionicons name={item.icon} size={20} color={Colors.BLUE} />
+                    <Ionicons name={item.icon} size={20} color={Colors.PRIMARY} />
                     
                 </View>
-                <Text style={{fontWeight:500}}>{item.name}</Text>
+                <Text style={{fontWeight:500, color:Colors.Dark_Charcoal}}>{item.name}</Text>
             </TouchableOpacity>
         )}
       />

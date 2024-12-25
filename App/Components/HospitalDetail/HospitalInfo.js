@@ -12,13 +12,14 @@ const HospitalInfo = ({hospital}) => {
         <Text style={{
             fontSize:23,
             fontFamily:'appfont-semi',
-            fontWeight:'bold'
+            fontWeight:'bold',
+            color:Colors.SECONDARY
         }}>{hospital.name}</Text>
         <FlatList
                 data={hospital.categories}
                 horizontal={true}
                 renderItem={({ item }) => (
-                  <Text style={{ marginRight: 10, color: Colors.GREY }}>
+                  <Text style={{ marginRight: 10, color:Colors.SECONDARY1 }}>
                     {item.name}
                   </Text>
                 )}

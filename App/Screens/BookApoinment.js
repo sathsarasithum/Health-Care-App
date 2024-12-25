@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { useRoute } from '@react-navigation/native'
 import AppoinmentHospitalInfo from '../Components/BookAppoinment/AppoinmentHospitalInfo';
@@ -9,12 +9,12 @@ import BookingSection from '../Components/BookAppoinment/BookingSection';
 const BookApoinment = () => {
     const param = useRoute().params;
   return (
-    <View style={{marginTop:10,padding:17}}>
+    <ScrollView style={{marginTop:10,padding:17}}>
       <AppoinmentHospitalInfo hospital={param.hospital}/>
       <ActionButton />
       <HorizontalLine />
       <BookingSection />
-    </View>
+    </ScrollView>
   )
 }
 

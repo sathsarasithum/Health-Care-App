@@ -16,7 +16,7 @@ export default function Home() {
       <Slider />
       <Categories />
       <PremiumHospitals />
-      <PremiumHospitals />
+      {/* <PremiumHospitals /> */}
       
     </ScrollView>
   )

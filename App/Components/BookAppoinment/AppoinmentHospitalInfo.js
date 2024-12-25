@@ -19,7 +19,7 @@ const AppoinmentHospitalInfo = ({ hospital }) => {
           alignItems:'center'
         }}
       >
-        <Image source={hospital.imageUrl} style={{ width: 100, height: 100 }} />
+        <Image source={hospital.imageUrl} style={{ width: 100, height: 100, borderRadius:10}} />
         <View>
           <Text
             style={{ fontSize: 20, fontFamily: "font-semi", marginBottom: 8 }}
@@ -41,7 +41,7 @@ const AppoinmentHospitalInfo = ({ hospital }) => {
                 fontSize: 16,
                 fontFamily: "appfont",
                 color: Colors.GREY,
-                width:'50%'
+                width:'75%'
               }}
             >
               {hospital.address}

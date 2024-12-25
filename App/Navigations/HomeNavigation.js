@@ -1,14 +1,16 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack'
 import Home from '../Screens/Home';
 import HospitalDoctorListScreen from '../Screens/HospitalDoctorListScreen';
 import HospitalDetails from '../Screens/HospitalDetails';
 import BookApoinment from '../Screens/BookApoinment';
+import LoginForm from '../Screens/LoginForm';
 
 const Stack = createStackNavigator();
 
 const HomeNavigation = () => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (
    <Stack.Navigator screenOptions={{headerShown:false}}>
     <Stack.Screen name='Home' component={Home}/>
@@ -16,6 +18,7 @@ const HomeNavigation = () => {
     component={HospitalDoctorListScreen} />
     <Stack.Screen name='hospital-detail' component={HospitalDetails}/>
     <Stack.Screen name='book-appoinment' component={BookApoinment} />
+    <Stack.Screen name='login-form' component={LoginForm} />
    </Stack.Navigator>
   )
 }
