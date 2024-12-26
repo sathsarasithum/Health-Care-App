@@ -1,11 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react';
+import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack'
 import Home from '../Screens/Home';
 import HospitalDoctorListScreen from '../Screens/HospitalDoctorListScreen';
 import HospitalDetails from '../Screens/HospitalDetails';
 import BookApoinment from '../Screens/BookApoinment';
 import LoginForm from '../Screens/LoginForm';
+import RegisterForm from '../Screens/RegisterForm';
 
 const Stack = createStackNavigator();
 

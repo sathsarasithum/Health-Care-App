@@ -14,7 +14,8 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 export default function Login() {
   const [button, setButton] = useState(1);
   const navigation = useNavigation();
-
+  const [users, setUsers] = useState([]);
+  
   return (
     <View style={{ alignItems: "center" }}>
       <Image source={img} style={styles.appImage} />
@@ -70,7 +71,10 @@ export default function Login() {
             styles.buttonStyle,
             button == 0 ? { backgroundColor: "#37ad96" } : null,
           ]}
-          onPress={() => setButton(0)}
+          onPress={() => {
+            setButton(0);
+            navigation.navigate('register-form',{users});
+          }}
         >
           <Text
             style={

@@ -3,13 +3,13 @@ import React from "react";
 import userImage from "../../../assets/Images/user1.png";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-export default function Header() {
+export default function Header({fname,lname}) {
   // const {isLoaded,isSignIn, user} = useUser();
   // if(!isLoaded||isSignIn){
   //     return null;
   // }
 
-  const user1 = "Sathsara";
+  
   return (
     <View style={{display:'flex', flexDirection:'row',alignItems:'center',justifyContent:'space-between',padding:10}}>
       <View
@@ -31,7 +31,7 @@ export default function Header() {
               fontFamily:'appfont-bold'
             }}
           >
-            {user1}
+            {fname} {lname}
           </Text>
         </View>
       </View>

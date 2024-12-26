@@ -6,8 +6,9 @@ import {
   TouchableOpacity,
   Dimensions,
   Image,
+  Alert,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PageHeader from "../Components/Shared/PageHeader";
 import Colors from "../../assets/Shared/Colors";
 import Feather from "@expo/vector-icons/Feather";
@@ -16,13 +17,73 @@ import { Formik } from 'formik';
 import * as Yup from 'yup'; 
 import google1 from '../../assets/Images/google/google1.png'
 import google2 from '../../assets/Images/google/google2.png'
+import { useNavigation, useRoute } from '@react-navigation/native'
 
-const LoginForm = () => {
+const LoginForm = ({ navigation }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [users, setUsers] = useState([]);
+  const route = useRoute();
+
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
+
+  useEffect(() => {
+    const { usersArray } = route.params || {};  // Fetch users from params
+    if (usersArray) {
+        setUsers(usersArray); // Set users if passed
+    }
+    console.log(users)
+}, [route.params]);
+
+  const handleLogin = () => {
+
+    const trimmedEmail = email.trim();
+    const trimmedPassword = password.trim();
+    // Log the email to check what is being entered
+    console.log("Entered Email:", trimmedEmail);
+    console.log("Entered Password:", trimmedPassword);
+
+    // Validate email format
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!trimmedEmail) {
+        Alert.alert("Error", "Please enter your email.");
+        return;
+    }
+    if (!emailPattern.test(trimmedEmail)) {
+        Alert.alert("Error", "Please enter a valid email.");
+        return; 
+    }
+
+    // Check if password is provided
+    if (!password) {
+        Alert.alert("Error", "Please enter your password.");
+        return; 
+    }
+
+    // Check if the user already exists
+    const existingUser = users.find(user => user.email === trimmedEmail);
+
+    if (existingUser) {
+        Alert.alert("Error", "User already exists. Please log in.");
+        navigation.navigate('home',{ user: existingUser });
+    } else {
+        // Add the new user to the array
+        // setUsers([...users, { email: trimmedEmail, password }]);
+        Alert.alert("Error", "User not exists. Please enter corect Email and Password");
+        // Optionally, navigate to the next screen
+        // navigation.navigate("HomeScreen");
+    }
+    };
+
+
+
+  console.log(users)
+
+
   return (
     <View style={{ marginTop: 10, padding: 17 }}>
       <PageHeader />
@@ -37,7 +98,11 @@ const LoginForm = () => {
         >
           See You Again
         </Text>
+
+
         <TextInput
+          value={email}
+          onChangeText={(text) => setEmail(text)}
           multiline={true}
           placeholder="Enter Your Email"
           style={{
@@ -54,7 +119,9 @@ const LoginForm = () => {
 
         <View style={styles.inputContainer}>
           <TextInput
+            value={password}
             placeholder="Enter Your Password"
+            onChangeText={(text) => setPassword(text)}
             secureTextEntry={!isPasswordVisible}
             style={styles.input}
           />
@@ -81,7 +148,9 @@ const LoginForm = () => {
           </TouchableOpacity>
         </View>
         <View style={{alignItems:'center', marginTop:20}}>
-          <TouchableOpacity
+          <TouchableOpacity 
+            // onPress={()=>navigation.navigate('home')}
+            onPress={handleLogin}
             style={{
               borderWidth: 1,
               backgroundColor: Colors.PRIMARY,
@@ -134,7 +203,7 @@ const LoginForm = () => {
 
         <View style={{display:'flex',marginTop:10, alignItems:'center', flexDirection:'row', padding:10,paddingLeft:75,}}>
             <Text>Don't have an account? </Text>
-            <TouchableOpacity><Text style={{color:Colors.PRIMARY}}>Register</Text></TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('register-form',{ users })}><Text style={{color:Colors.PRIMARY}}>Register</Text></TouchableOpacity>
         </View>
       </View>
     </View>
