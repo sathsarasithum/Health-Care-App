@@ -62,6 +62,8 @@ export default function Categories() {
                   {
                     categoryName:item.name
                   })}
+
+
                   style={{alignItems:'center',marginBottom:10}}>
                     <View style={{
                       backgroundColor:Colors.SECONDARY_COLOR,

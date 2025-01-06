@@ -69,13 +69,11 @@ const LoginForm = ({ navigation }) => {
 
     if (existingUser) {
         Alert.alert("Error", "User already exists. Please log in.");
-        navigation.navigate('home',{ user: existingUser });
+        navigation.navigate('Main',{ user: existingUser });
     } else {
-        // Add the new user to the array
-        // setUsers([...users, { email: trimmedEmail, password }]);
+        
         Alert.alert("Error", "User not exists. Please enter corect Email and Password");
-        // Optionally, navigate to the next screen
-        // navigation.navigate("HomeScreen");
+
     }
     };
 

@@ -8,7 +8,9 @@ import PremiumHospitals from '../Components/Home/PremiumHospitals'
 
 export default function Home({route}) {
 
-  const { user } = route.params;
+  // const { user } = route.params;
+
+  const user = route?.params?.user || {};
 
   useEffect(()=>{
     console.log("Home User", user);
@@ -16,14 +18,14 @@ export default function Home({route}) {
 
   return (
     <ScrollView style={{padding:20, marginTop:20}}>
-      <Header fname={user.firstName} lname= {user.lastName}/>
+      <Header fname="Sathsara" lname= "Sithum"/>
 
       <SearchBar setSearchText={(value) => console.log(value)}/>
 
       <Slider />
       <Categories />
       <PremiumHospitals />
-      {/* <PremiumHospitals /> */}
+      <PremiumHospitals />
       
     </ScrollView>
   )

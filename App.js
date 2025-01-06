@@ -7,6 +7,10 @@ import TabNavigation from "./App/Navigations/TabNavigation";
 import AuthNavigation from "./App/Navigations/AuthNavigation";
 import { useFonts } from 'expo-font';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import React, { useState, useEffect } from 'react';
+import HomeNavigation from "./App/Navigations/HomeNavigation";
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 export default function App() {
 
@@ -18,13 +22,32 @@ export default function App() {
 
   });
 
-  if (!fontLoaded){
-    return null;
-  }
+  const Stack = createStackNavigator();
+  const Tab = createBottomTabNavigator();
+
+
+
   return (
+    // <GestureHandlerRootView style={{ flex: 1 }}>
+    //   <NavigationContainer>
+    //     {/* <AuthNavigation /> */}
+    //     <TabNavigation />
+    //   </NavigationContainer>
+    // </GestureHandlerRootView>
     <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
-        <AuthNavigation />
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          {/* Show AuthNavigation first */}
+          <Stack.Screen name="Auth" component={AuthNavigation} />
+          {/* After login, show TabNavigation */}
+          <Stack.Screen name="Main" component={TabNavigation} />
+          {/* <Stack.Screen name="Home" component={HomeNavigation} /> */}
+        </Stack.Navigator>
+
+
+
+        {/* <TabNavigation /> */}
+
       </NavigationContainer>
     </GestureHandlerRootView>
   );

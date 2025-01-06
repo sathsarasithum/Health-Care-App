@@ -1,4 +1,3 @@
-import { View, Text } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Home from '../Screens/Home'
@@ -21,7 +20,7 @@ export default function TabNavigation() {
             headerShown:false,
             tabBarStyle: { position: 'absolute' },
             tabBarLabelStyle: { fontSize: 14 },}}>
-        <Tab.Screen name='Home' component={HomeNavigation} 
+        <Tab.Screen name='home' component={HomeNavigation} 
           options={{
             tabBarIcon:({color,size}) => (
               <FontAwesome name="home" size={size} color='#1ABC9C' />
@@ -35,13 +34,13 @@ export default function TabNavigation() {
             )
           }}
         />
-        <Tab.Screen name='Login' component={Login} 
+        {/* <Tab.Screen name='Login' component={Login} 
           options={{
             tabBarIcon:({color,size}) => (
               <FontAwesome name="home" size={size} color='#1ABC9C' />
             )
           }}
-        />
+        /> */}
         <Tab.Screen name='Appoinment' component={Appoinment} 
           options={{
             tabBarIcon:({color,size}) => (
