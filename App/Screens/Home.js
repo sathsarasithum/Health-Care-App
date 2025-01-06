@@ -18,7 +18,7 @@ export default function Home({route}) {
 
   return (
     <ScrollView style={{padding:20, marginTop:20}}>
-      <Header fname="Sathsara" lname= "Sithum"/>
+      <Header fname={user.firstName} lname= {user.lastName}/>
 
       <SearchBar setSearchText={(value) => console.log(value)}/>
 
